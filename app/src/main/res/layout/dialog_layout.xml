@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:padding="4dp"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pragyan_dark_grey"
+    android:orientation="vertical"
+    android:padding="7dp">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/freecharge_logo"
         android:layout_gravity="center"
-        android:padding="3dp"
-        />
+        android:layout_marginBottom="3dp"
+        android:src="@drawable/freecharge_logo" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="DUMMY INSTRUCTION TO BE REPLACED"
         android:layout_gravity="center"
-        android:gravity="center"
-        android:textSize="16sp"
-        />
+        android:text="Greetings from Pragyan'16! Thank you for registering on the Pragyan app.\n1. Pragyan in association with Freecharge provides unique coupon codes - Transact for Rs. 30 and get Cashback of Rs. 30 for prepaid / postpaid bills / utility payment/ DTH / Data card \n2. This is not applicable for new users.\n3. Existing users can create a new account in Freecharge and avail this offer.\n4. Not valid on airtel number."
+        android:textColor="@color/pragyan_grey"
+        android:textSize="16sp" />
 </LinearLayout>

@@ -1,13 +1,10 @@
 package org.pragyan.pragyantshirtapp;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -20,11 +17,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -47,11 +41,8 @@ import java.util.List;
 
 
 public class WelcomePage extends ActionBarActivity {
-    LinearLayout layoutOfPopup;
-    PopupWindow popupMessage;
 
     Button couponButton;
-    TextView popupText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +60,6 @@ public class WelcomePage extends ActionBarActivity {
                 if (!Utilities.coupon.equals("meh.")) {
                     ClipData clip = ClipData.newPlainText("couponCode", Utilities.coupon);
                     clipboard.setPrimaryClip(clip);
-
                     Toast.makeText(getApplicationContext(), "Copied to clipboard", Toast.LENGTH_SHORT).show();
 
                 }
@@ -82,27 +72,11 @@ public class WelcomePage extends ActionBarActivity {
             @Override
             public void onClick(View view) {
 
-//DIALOG INSTRUCTIONS MUST BE CHANGED
-/*
-                new AlertDialog.Builder(WelcomePage.this)
-                        .setTitle("Coupon Instructions")
-                        .setMessage("Dummy instruction")
-                        .setPositiveButton("Done", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
-                            }
-                        })
-                        .create()
-                        .show();
-                        */
-
-                new CouponDialogFragment().show(getFragmentManager(),null);
+                new CouponDialogFragment().show(getFragmentManager(), null);
 
             }
         });
         if (Utilities.status == 2) {
-            //couponButton.setVisibility(View.INVISIBLE);
             ImageView qrCodeImage = (ImageView) findViewById(R.id.qr_code_image);
             qrCodeImage.setVisibility(View.VISIBLE);
             Bitmap bitmap = new SaveImage(Utilities.username, null).loadFromCacheFile();
@@ -217,11 +191,8 @@ public class WelcomePage extends ActionBarActivity {
 
     class coupTask extends AsyncTask<String, Void, String> {
 
-
         @Override
         protected void onPreExecute() {
-
-
         }
 
         @Override
