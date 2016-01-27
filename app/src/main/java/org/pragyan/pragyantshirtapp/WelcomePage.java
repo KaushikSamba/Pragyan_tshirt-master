@@ -83,6 +83,7 @@ public class WelcomePage extends ActionBarActivity {
             public void onClick(View view) {
 
 //DIALOG INSTRUCTIONS MUST BE CHANGED
+/*
                 new AlertDialog.Builder(WelcomePage.this)
                         .setTitle("Coupon Instructions")
                         .setMessage("Dummy instruction")
@@ -94,6 +95,9 @@ public class WelcomePage extends ActionBarActivity {
                         })
                         .create()
                         .show();
+                        */
+
+                new CouponDialogFragment().show(getFragmentManager(),null);
 
             }
         });
